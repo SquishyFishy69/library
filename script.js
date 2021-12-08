@@ -1,10 +1,6 @@
 const addButton = document.getElementById("add");
 const bodyDiv = document.getElementsByClassName("body")[0];
-let myLibrary = [
-    { title: 'Hyperion', author: 'Dan Simmons', pages: '300', read: true },
-    { title: 'Animal Farm', author: 'George Orwell', pages: '200', read: false },
-    { title: 'In Search of Lost Time', author: "Marcel Proust", pages: '400', read: false }
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
