@@ -1,0 +1,98 @@
+html, input, body {
+    padding: 0;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.header img {
+    border-radius: 100%;
+}
+
+.header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.header input {
+    font-size: 24px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(165, 201, 223);
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px; 
+    padding: 10px; 
+    background-color: rgb(165, 201, 223); 
+    font-size: 20px; 
+    border-radius: 20px; 
+    width: 300px;
+}
+
+.card div {
+    width: 300px;
+}
+
+.card div h2, .card div p {
+    text-align: center;
+}
+
+.readBtn {
+    background-color: rgb(71, 190, 71);
+    font-size: 20px;
+    border-style: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.notReadBtn {
+    background-color: rgb(221, 90, 90);
+    font-size: 20px;
+    border-style: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.readBtn:hover, .notReadBtn:hover, .closeBtn:hover {
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        padding: 10px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+    .header img {
+        height: 30px;
+        width: 30px;
+    }
+    .header input {
+        font-size:16px;
+        padding: 5px;
+    }
+    .card, .card div {
+        width: 200px;
+    }
+}
