@@ -2,17 +2,21 @@ const addButton = document.getElementById("add");
 const bodyDiv = document.getElementsByClassName("body")[0];
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function () {
-        return `${title} by ${author}, ${pages}, ${read}`;
+class Book {
+    constructor (
+        title = "Unknown",
+        author = "Unknown",
+        pages = 0,
+        read = false
+    ) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
 }
 
-function addBookToLibrary() {
+const addBookToLibrary = () => {
     let title = prompt("Enter the title of the book");
     let author = prompt("Enter the author of the book");
     let pages = prompt("Enter the number of pages");
@@ -30,9 +34,9 @@ function addBookToLibrary() {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     loopBooks()
-}
+};
 
-function loopBooks() {
+const loopBooks = () => {
     while (bodyDiv.firstChild) {
         bodyDiv.removeChild(bodyDiv.lastChild);
     }
@@ -88,12 +92,12 @@ function loopBooks() {
         bookCard.appendChild(bookCardBottom);
         bodyDiv.appendChild(bookCard);
     })
-}
+};
 
 addButton.addEventListener("click", addBookToLibrary, false);
 window.addEventListener("load", loopBooks);
 
-function changeReadClass(e) {
+const changeReadClass = (e) => {
     console.log(e.target);
     if (e.target.classList[1] === 'readBtn') {
         e.target.setAttribute("value", "Not read");
@@ -105,9 +109,9 @@ function changeReadClass(e) {
     for (let i = 0; i < myLibrary.length; i++) {
         if (myLibrary[i].title == e.target.classList[0]) myLibrary[i].read = !myLibrary[i].read;
     }
-}
+};
 
-function removeBookBtn(e) {
+const removeBookBtn = (e) => {
     let bookID = e.target.classList[1];
     bodyDiv.removeChild(document.querySelector(`.${e.target.classList[1]}`));
     for (let i = 0; i < myLibrary.length; i++) {
@@ -116,4 +120,4 @@ function removeBookBtn(e) {
             break;
         }
     }
-}
+};
