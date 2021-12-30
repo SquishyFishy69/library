@@ -106,6 +106,7 @@ body {
 
 .card div {
   width: 300px;
+  text-align: center;
 }
 
 .card h2,
